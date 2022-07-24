@@ -6,8 +6,9 @@
 textarea {
     border: none;
     outline: none;
-    color: transparent;
-    background: transparent;
+    width: 100%;
+    height: 100vh;
+    color: white;
     caret-color: white; /* Or choose your favorite color */
 }
 html, body {
@@ -21,18 +22,10 @@ div {
 }
 </style>
 
-<textarea id="editing" oninput="update(this.value);"></textarea>
-
-<pre id="highlighting" aria-hidden="true">
-  <code class="language-html" id="highlighting-content"></code>
-</pre>
-
-<div></div>
+<textarea oninput="update(this.value);"></textarea>
 
 <script>
 function update(text) {
-  let result_element = document.querySelector("#highlighting-content");
-  result_element.innerText = text;
-  Prism.highlightElement(result_element);
+  let result_element = document.title;
 }
 </script>
